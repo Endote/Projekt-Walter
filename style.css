@@ -9,8 +9,8 @@ background-color: #b264d9;
 }
 
 .main {
-  height: 100%;
-  background-color: green;
+border: 2px solid black;
+background-color: white;
 }
 
 .panel-search{
