@@ -2,9 +2,14 @@ body {
 background-color: #b264d9;
 }
 
+.data {
+  position: relative;
+  left: 33%;
+}
+
 .HRanon{
 
-  
+
   height: 2px;
   background-color: #00505c;
   color: #00505c;
@@ -35,8 +40,13 @@ input[type=text] {
 }
 
 input[type=submit] {
+  color: #b2a2ac;
+  background-color: #087830;
+  border: 4px ridge #d6a6c4;
   padding: 5px 10px;
-  width: 100px;
+  width: 200px;
+  position: relative;
+  left: 65%;
 }
 
 
