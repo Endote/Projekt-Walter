@@ -16,6 +16,14 @@ background-color: #b264d9;
   border-color: #00505c;
 }
 
+#tt {
+  color: #1919b3;
+}
+
+#ee {
+  color: #f42500;
+}
+
 .wrap {
   max-width: 80%;
   padding-left: 20px;
