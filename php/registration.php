@@ -13,11 +13,11 @@ require_once 'connect.php';
 
 //POBIERANIE DANYCH
 
-$login = $_POST['login'];
-$password = $_POST['password'];
-$password2 = $_POST['password2'];
-$email = $_POST['email'];
-
+$login = $_POST['RegLogin'];
+$password = $_POST['RegPasswd'];
+$password2 = $_POST['RegPasswd2'];
+$email = $_POST['RegEmail'];
+$phone = $_POST['RegPhone'];
 
 //GENEROWANIE SALTA
 
@@ -42,43 +42,59 @@ $verificationCode = md5(rand(0,1000));
 //SPRAWDZ LOGIN, HASLO
 
 
-if (($password !== $password2) || (strlen($password) < 6) || (strlen($login) < 4) || ($checkLogin == 'yes') || (empty($email)) || (!filter_var($email, FILTER_VALIDATE_EMAIL)) || ($checkEmail == 'yes'))
+if (($password !== $password2) || (strlen($password) < 6) || (strlen($login) < 4) || ($checkLogin == 'yes') || ($email == "") || (!(filter_var($email, FILTER_VALIDATE_EMAIL))) || (($checkEmail == 'yes')) || (!(is_numeric($phone))) || ($login == "") || ($password == "") || ($password2 == "") || ($phone == "") )
 {
    if ($checkLogin == 'yes')
     {
-        echo "<script type='text/javascript'>alert('This login already exists!');window.location = 'index2.php';</script>";
+        echo "<script type='text/javascript'>alert('This login already exists!');window.location = '../Register.html';</script>";
     } 
     
    else if ($checkEmail == 'yes')
     {
-        echo "<script type='text/javascript'>alert('This Email is already being used!');window.location = 'index2.php';</script>";
+        echo "<script type='text/javascript'>alert('This Email is already being used!');window.location = '../Register.html';</script>";
     } 
     
-    else if ($password !== $password2)
+    else if (($password !== $password2) || ($password2 == "") || ($password2 == "") )
     {
-    echo "<script type='text/javascript'>alert('Passwords do not match!');window.location = 'index2.php';</script>";
+    echo "<script type='text/javascript'>alert('Passwords do not match!');window.location = '../Register.html';</script>";
     }
     
-    else if (empty($email))
+    else if ($email == "") 
     {
-        echo "<script type='text/javascript'>alert('Insert email address');window.location = 'index2.php';</script>";
+        echo "<script type='text/javascript'>alert('Insert email address');window.location = '../Register.html';</script>";
     }
     
-    else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+    else if ($login == "")
     {
-        echo "<script type='text/javascript'>alert('Insert vaild email');window.location = 'index2.php';</script>";
+        echo "<script type='text/javascript'>alert('Insert login');window.location = '../Register.html';</script>";
+    }
+    
+    
+    else if ($phone == "")
+    {
+        echo "<script type='text/javascript'>alert('Insert phone number');window.location = '../Register.html';</script>";
+    }
+    
+    else if (!(filter_var($email, FILTER_VALIDATE_EMAIL)))
+    {
+        echo "<script type='text/javascript'>alert('Insert vaild email');window.location = '../Register.html';</script>";
     }
     
     
    
-    else if(strlen($login) < 4)
+    else if (strlen($login) < 4)
     {
-        echo "<script type='text/javascript'>alert('Login must be at least 4 characters');window.location = 'index2.php';</script>";
+        echo "<script type='text/javascript'>alert('Login must be at least 4 characters');window.location = '../Register.html';</script>";
     }
     
-    else if(strlen($password) < 6)
+    else if (strlen($password) < 6)
     {
-        echo "<script type='text/javascript'>alert('Password must be at least 6 characters');window.location = 'index2.php';</script>";
+        echo "<script type='text/javascript'>alert('Password must be at least 6 characters');window.location = '../Register.html';</script>";
+    }
+    
+    else if (!(is_numeric($phone)))
+    {
+        echo "<script type='text/javascript'>alert('Insert valid phone number');window.location = '../Register.html';</script>";
     }
 }
 
@@ -96,7 +112,7 @@ if($link === false)
     die("ERROR: Could not connect. ".mysqli_connect_error());
 }
 
-$sql = "INSERT INTO login (Login, Password, Email, ActivationCode, EmailStatus) VALUES ('$login', '$password', '$email', '$verificationCode', 'not verified')";
+$sql = "INSERT INTO login (Login, Password, Email, Phone, ActivationCode, EmailStatus) VALUES ('$login', '$password', '$email', '$phone', '$verificationCode', 'not verified')";
 
 
 if(mysqli_query($link, $sql))
@@ -117,7 +133,7 @@ else
 
     
     
-echo "<br /><br /> <a href='index2.php'>Back</a>";
+echo "<br /><br /> <a href='../index.html'>Back</a>";
 
     }
 
