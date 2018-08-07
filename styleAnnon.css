@@ -16,6 +16,11 @@ background-color: #b264d9;
   border-color: #00505c;
 }
 
+.register {
+  position: fixed;
+  left: 70%;
+}
+
 #tt {
   color: #1919b3;
 }
