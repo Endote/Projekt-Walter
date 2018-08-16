@@ -43,13 +43,14 @@ background-color: white;
 
 .page-header {
   background-color: white;
+  height: 100px;
   position: relative;
 }
 
 input[type=text] {
   padding: 5px;
   border: 2px solid #008000;
-  width: 50%
+  width: 80%
 }
 
 input[type=submit] {
