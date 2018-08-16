@@ -30,6 +30,13 @@ background-color: white;
   position: relative;
 }
 
+.search:hover{
+  background-color: #98ff98;
+  transition: all 0.4s ease;
+  border: 1px solid black;
+
+}
+
 
 
 input[type=text] {
@@ -70,7 +77,7 @@ color: black;
 }
 
 .categoryA{
-  color: #4cbb18;
+  color: #ffb300;
   font-size: 24px;
   font-strenght: bold;
 }
