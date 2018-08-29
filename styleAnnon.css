@@ -2,10 +2,19 @@ body {
 background-color: #b264d9;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+a span {
+  display: inline-block;
+  padding: 2px 4px;
+}
 
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  max-height: 50px;
+}
+
+.spanhelp {
+  font-size: 0px;
 }
 
 .wrap {
@@ -20,7 +29,7 @@ background-color: #b264d9;
   background-color: white;
   position: relative;
   height: 50px;
-  width: 90%;
+  width: 100%;
   padding: 10px 10px;
   align-self:  center;
 }
@@ -79,9 +88,40 @@ align-self: center;
     background-color: #3e8e41;
 }
 
-.data {
-  position: relative;
-  left: 33%;
+.register {
+  position: fixed;
+  left: 70%;
+}
+
+.panel-search{
+  background-color: #009e60;
+  padding: 10px 25px;
+  border: 2px solid #008000;
+}
+
+.search:hover{
+  background-color: #98ff98;
+  transition: all 0.4s ease;
+  border: 1px solid black;
+}
+
+.addA{
+  background-color: orange;
+  font-style: bold;
+
+}
+
+.categoryA{
+  color: #ffb300;
+  font-size: 24px;
+  font-strenght: bold;
+}
+
+.btnhead {
+position: absolute;
+top: 5px;
+border: 2px ridge #229655;
+color: black;
 }
 
 .HRanon{
@@ -109,6 +149,7 @@ input[type=submit] {
   background-color: #087830;
   border: 4px ridge #d6a6c4;
   padding: 5px 10px;
+  margin: 20px 20px;
   width: 200px;
   position: relative;
   left: 65%;
@@ -118,31 +159,4 @@ input[type=password] {
   padding: 5px;
   border: 2px solid #008000;
   width: 80%
-}
-
-<!-- NOT MINE ALE KURWA SPOKO -->
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
-
-#img-upload{
-    width: 100%;
 }
