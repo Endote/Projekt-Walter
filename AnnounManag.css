@@ -1,0 +1,29 @@
+.container {
+  max-width: 75%;
+  border: 2px solid black;
+}
+
+.flexmanag{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex{
+flex: 1 2 content;
+color: black;
+max-height: 50px;
+align-self: inherit;
+}
+
+button {
+  background-color: #b44136; /* Green background */
+  border: 3px solid #002e63; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float:right; /* Float the buttons side by side */
+  min-height: auto;
+  max-height: 50px;
+}

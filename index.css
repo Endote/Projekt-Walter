@@ -1,0 +1,22 @@
+input[type=text] {
+  padding: 5px;
+  border: 2px solid #002e63;
+  width: 80%
+}
+
+input[type=password] {
+  padding: 5px;
+  border: 2px solid #002e63;
+  width: 80%
+}
+
+input[type=submit] {
+  padding: 5px 10px;
+  max-width: 150px;
+}
+
+.categoryA{
+  color: #ffb300;
+  font-size: 24px;
+  font-strenght: bold;
+}
