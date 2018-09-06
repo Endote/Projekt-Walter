@@ -32,8 +32,11 @@ else
     
     else if (($loginDB == 'yes') && ($passwordDB == $password) && ($row2[0] == 'verified') )
     {
-        echo "You are logged in! :)";
-        echo "<br /><br /> <a href='index.php'>Back</a>";
+        session_start();
+        $result3 = mysqli_query($link,"SELECT ID FROM login WHERE Login='$login' OR Email='$login'");
+        $user_id = mysqli_fetch_row($result3);
+        $_SESSION['user'] = $user_id[0];
+        
     }
     
     mysqli_close($link);
