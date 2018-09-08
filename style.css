@@ -119,3 +119,9 @@ top: 5px;
 border: 2px ridge #229655;
 color: black;
 }
+
+.search:hover{
+  background-color: #98ff98;
+  transition: all 0.4s ease;
+  border: 1px solid black;
+}

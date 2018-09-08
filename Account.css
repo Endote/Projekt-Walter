@@ -1,19 +1,25 @@
 .container {
-  max-width: 75%;
   border: 2px solid black;
 }
 
 .flexmanag{
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.acchead {
+background-color:white;
+width: 100%;
+padding-left: 40px;
 }
 
 .flex{
 flex: 1 2 content;
 color: black;
-max-height: 50px;
+max-height: 100px;
 align-self: inherit;
 }
 
@@ -27,3 +33,4 @@ button {
   min-height: auto;
   max-height: 50px;
 }
+

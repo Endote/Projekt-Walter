@@ -1,72 +1,7 @@
-body {
-background-color: #b264d9;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-
-}
-
-.page-header {
-  background-color: white;
-  position: relative;
-  height: 50px;
-  width: 100%;
-  padding: 10px 10px;
-  align-self:  center;
-}
 
 .main {
 border: 2px solid black;
 background-color: white;
-}
-
-.flexnav{
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.flexbtngrp{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.navA{
-flex: 1 2 content;
-color: black;
-max-height: 50px;
-align-self: center;
-}
-
-.btn-group button {
-    background-color: #4CAF50; /* Green background */
-    border: 1px solid green; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: right; /* Float the buttons side by side */
-    min-height: auto;
-    max-height: 50px;
-}
-
-.btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-}
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-    background-color: #3e8e41;
 }
 
 .HRanon{
@@ -76,16 +11,6 @@ align-self: center;
   border-color: #00505c;
 }
 
-.register {
-  position: fixed;
-  left: 70%;
-}
-
-.page-header {
-  background-color: white;
-  height: 100px;
-  position: relative;
-}
 
 input[type=text] {
   padding: 5px;
@@ -108,11 +33,4 @@ input[type=password] {
   padding: 5px;
   border: 2px solid #008000;
   width: 80%
-}
-
-.btnhead {
-position: absolute;
-top: 5px;
-border: 2px ridge #229655;
-color: black;
 }
