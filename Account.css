@@ -14,6 +14,13 @@
 background-color:white;
 width: 100%;
 padding-left: 40px;
+display:flex;
+justify-content: space-evenly;
+align-items: flex-end;
+}
+
+.accpanel{
+	
 }
 
 .flex{
@@ -32,5 +39,13 @@ button {
   float:right; /* Float the buttons side by side */
   min-height: auto;
   max-height: 50px;
+}
+
+.awatar {
+width:auto;
+  max-height:100px;
+  border:1px solid grey;
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 
