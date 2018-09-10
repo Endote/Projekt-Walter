@@ -18,7 +18,8 @@
 		~tekst~ - przekreśla tekst<br/>
 		</p>
 		<?php
-
+		require_once 'connect.php';
+		require_once 'session.php';
 			// this function is responsible for converting text-markings such as * ** _ ~ to html markup tags like <b> <u> etc.
 			function ConvertFormating($text_to_convert){
 				//Here is an aray with keys and values that will help us to convert the markings
