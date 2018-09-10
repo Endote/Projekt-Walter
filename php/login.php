@@ -36,7 +36,7 @@ else
         $result3 = mysqli_query($link,"SELECT ID FROM login WHERE Login='$login' OR Email='$login'");
         $user_id = mysqli_fetch_row($result3);
         $_SESSION['user'] = $user_id[0];
-        
+        echo "<script type='text/javascript'>window.location = '../index.html';</script>";
     }
     
     mysqli_close($link);
