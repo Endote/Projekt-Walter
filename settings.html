@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>  ette </title>
+  <!-- BOOTSRAP & STUFF-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Back to normie bs -->
+  <link rel="stylesheet" href="settings.css">
+
+  <meta charset="utf-8">
+  <!-- To je accordion, tego nie polakierujesz zwykłym szprajem! -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+</head>
+
+<body>
+
+  <div class="container ">
+    <div id="accordion">
+  <h3>Dane Kontaktowe</h3>
+  <div class="menu">
+    <form id="FormDane" action="#" method="post">
+    <p>Osoba Kontaktowa</p>
+    <input type="text" name="name" value="name" tabindex="1"> <br><br>
+    <p>Numer Telefonu</p>
+    <input type="text" name="number" value="700 123 431" tabindex="2"> <br><br>
+    <p>Email</p>
+    <input type="text" name="email" value="text@gmail.com" tabindex="3"> <br><br>
+
+    <input type="submit" value="Zapisz">
+    </form>
+
+  </div>
+
+  <h3>Hasło</h3>
+  <div class="menu">
+    <br>
+    <h4>Zmiana Hasła</h4>
+    <p> Stare Hasło </p>
+    <form id="FormPasswd" action="#" method="post">
+    <input type="password" name="oldpasswd" value="name" tabindex="1"> <br><br>
+    <p> Nowe Hasło </p>
+    <input type="password" name="newpasswd" value="name" tabindex="2"> <br><br>
+    <p> Powtórz Nowe Hasło </p>
+    <input type="password" name="newpasswd2" value="name" tabindex="3"> <br><br>
+
+    <input type="submit" value="Zmień">
+
+  </div>
+  <h3>Zarządzanie Kontem</h3>
+  <div class="menu">
+    <p>
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.
+    </p>
+    <p>
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    </p>
+  </div>
+</div>
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>

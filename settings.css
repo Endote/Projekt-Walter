@@ -1,0 +1,14 @@
+h3 {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.menu{
+
+  margin: 20px;
+  margin-top: -10px;
+  padding: 20px;
+  padding-bottom: 10px;
+  border: 2px solid black;
+  border-top: 0;
+}

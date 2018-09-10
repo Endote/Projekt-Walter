@@ -2,12 +2,20 @@
   border: 2px solid black;
 }
 
+.wrap{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
 .flexmanag{
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: stretch;
   flex-direction: column;
+  width: 960px;
+  height: 100%;
 }
 
 .acchead {
@@ -20,7 +28,21 @@ align-items: flex-end;
 }
 
 .accpanel{
-	
+  display:flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.acctable{
+  width: 100%;
+  height: 450px;
+  flex-grow: 2;
+  border: none;
+}
+
+.accfooter{
+ background-color: white;
+ border-top: 1px solid black;
 }
 
 .flex{
@@ -30,7 +52,7 @@ max-height: 100px;
 align-self: inherit;
 }
 
-button {
+button.buttonpanel {
   background-color: #b44136; /* Green background */
   border: 3px solid #002e63; /* Green border */
   color: white; /* White text */
@@ -41,6 +63,8 @@ button {
   max-height: 50px;
 }
 
+
+
 .awatar {
 width:auto;
   max-height:100px;
@@ -48,4 +72,3 @@ width:auto;
   background-repeat:no-repeat;
   background-size:cover;
 }
-

@@ -35,7 +35,7 @@
       </div>
       <div class="btn-group flexbtngrp ">
           <button> <a class="navA" href="AnnounAdd.html" >Dodaj Ogłoszenie!</a> </button>
-          <button> <a class="navA" href="AnnounManag.html"> Twoje Ogłoszenia </a> </button>
+          <button> <a class="navA" href="Account.html"> Twój Profil </a> </button>
           <button> <a class="navA" href="index.html"> Ogłoszenia </a> </button>
           <button> <a class="navA" data-toggle="modal" data-target="#Login">Logowanie </a> </button>
       </div>
@@ -86,34 +86,37 @@ Testing
 
 
 
- 
+    <div class='wrap'>
       <div class = "flexmanag" >
-	  
+
             <div class="flex acchead">
-			
+
 			<img class="awatar" src="awatar.jpg" alt="Twoje zdjęcie">
-							
-			<h2> Twój profil </h2> 
+
+			<h2> Twój profil </h2>
 			Tu możesz zarządzać swoimi danymi oraz ogłoszeniami.
 			</div>
-			
+
 			<div class="flex accpanel">
-			 
+			     <button class="buttonpanel"><a href="adds.html" target="iframe"> Ogłoszenia </a></button>
+           <button class="buttonpanel"><a href="answers.html" target="iframe"> Odpowiedzi </a></button>
+           <button class="buttonpanel"><a href="settings.html" target="iframe"> Ustawienia </a></button>
 			</div>
-			
-			<div class="flex acctable">
-			
-			</div>
-			
-			<div class="flex accfooter">
-			<h1> Testin </h1>
-			</div>          
-                 
+
+
+        <iframe class="acctable" style="visibility:hidden;" onload="this.style.visibility = 'visible';"
+         src="settings.html" name="iframe"></iframe>
+
+      <div class="accfooter">
+        Poka 100py
       </div>
 
-    
 
- 
+      </div>
+    </div>
+
+
+
 
 
 
