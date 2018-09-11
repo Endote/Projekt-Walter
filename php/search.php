@@ -2,8 +2,8 @@
 require('connect.php');
 mysqli_set_charset($link,"utf8");
 
-$search = $_GET['search'];
-$category = $_GET['cat'];
+$search = @$_GET['search'];
+$category = @$_GET['kat'];
 
 function DisplayResults($connectionLink, $query){
     $raw_results = mysqli_query($connectionLink,$query) or die(mysqli_error($connectionLink));

@@ -1,11 +1,10 @@
 <?php
+@session_start();
 require_once 'connect.php';
-session_start();
-
 if (isset($_SESSION['user'])) {
     // logged in
 } else {
-    echo "<script type='text/javascript'>alert('Please, log in first to see this page');window.location = '../Register.html';</script>";
+    echo "<script type='text/javascript'>alert('Please, log in first to see this page');window.location = './Register.php';</script>";
 }
 /*
 

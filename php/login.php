@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 require_once 'connect.php';
 
@@ -32,11 +33,10 @@ else
     
     else if (($loginDB == 'yes') && ($passwordDB == $password) && ($row2[0] == 'verified') )
     {
-        session_start();
         $result3 = mysqli_query($link,"SELECT ID FROM login WHERE Login='$login' OR Email='$login'");
         $user_id = mysqli_fetch_row($result3);
         $_SESSION['user'] = $user_id[0];
-        echo "<script type='text/javascript'>window.location = '../index.html';</script>";
+        echo "<script type='text/javascript'>window.location = '../index.php';</script>";
     }
     
     mysqli_close($link);
