@@ -144,15 +144,32 @@ mysqli_set_charset($link,"utf8");
 
 if(isset($_GET['id'])){
   $ad_id = $_GET['id'];
-  $raw_results = mysqli_query($link,"SELECT * FROM adverts WHERE id = '$ad_id'") or die(mysqli_error($connectionLink));
+  $raw_results = mysqli_query($link,"SELECT * FROM adverts WHERE id = '$ad_id'") or die(mysqli_error($link));
   if(mysqli_num_rows($raw_results) > 0)      
   {
     while($row = mysqli_fetch_assoc($raw_results))
     {
       $title_of_ad = $row['title'];
       $text_of_ad = $row['text'];
+      $poster_id = $row['poster_id'];
       //echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image1'] ).'"/>';
-      echo("<script type='text/javascript'>document.getElementById('search-container').innerHTML += '<p><h1>$title_of_ad</h1><h4>$text_of_ad</h4></p>';</script>");
+      $author_results = mysqli_query($link,"SELECT * FROM login WHERE ID = '$poster_id'") or die(mysqli_error($link));
+      $row2 = mysqli_fetch_assoc($author_results);
+      $author_name = $row2['Login'];
+
+      date_default_timezone_set('Europe/Berlin'); // CDT
+      $current_date = strtotime(date('Y-m-d'));
+      $posting_date = strtotime($row['posting_date']);
+      $date_difference = ($current_date - $posting_date)/24/60/60;
+      $how_long_ago = $date_difference.' dni temu';
+      if($date_difference == 0){
+        $how_long_ago = 'dzisiaj';
+      }
+      else if ($date_difference == 1){
+        $how_long_ago = 'wczoraj';
+      }
+
+      echo("<script type='text/javascript'>document.getElementById('search-container').innerHTML += '<p><h1>$title_of_ad</h1><h4>Opublikowane przez: $author_name $how_long_ago</h4><h4>$text_of_ad</h4></p>';</script>");
       for ($i=1; $i <= 5; $i++) { 
         if($row["image{$i}"] != null){
           echo("<script type='text/javascript'>document.getElementById(\"image{$i}_a\").setAttribute('href',\"data:image/jpeg;base64,".base64_encode( $row["image{$i}"] )."\");</script>");
