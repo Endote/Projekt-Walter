@@ -22,7 +22,7 @@ session_start();
 
 
 
-  <a href="Register.php" class="btn btn-info btnhead register"  role="button">
+  <a href="Register.html" class="btn btn-info btnhead register"  role="button">
     Zarejestruj się! </a>
 
 
@@ -30,17 +30,17 @@ session_start();
   <div class = "flexnav page-header">
 
       <div class =" logo">
-        <a class="spanhelp" href="index.php" >
+        <a class="spanhelp" href="index.html" >
           <span style="color: #bc152b; ">e</span><!--
           --><span style="color: #6699cc; ">tt</span><!--
           --><span style="color: #bc152b; ">e</span>
          </a>
       </div>
       <div class="btn-group flexbtngrp ">
-          <a class="navA" onclick="location.href='AnnounAdd.php'"><button> Dodaj Ogłoszenie!</button></a>
-          <a class="navA" href="Account.php"><button>  Twój Profil</button></a>
-          <a class="navA" href="index.php"><button>  Ogłoszenia </button> </a>
-          <a class="navA" data-toggle="modal" data-target="#Login" id='loginButton'><button> Logowanie </button></a>
+          <button> <a class="navA" href="AnnounAdd.html" >Dodaj Ogłoszenie!</a> </button>
+          <button> <a class="navA" href="Account.html"> Twój Profil </a> </button>
+          <button> <a class="navA" href="index.html"> Ogłoszenia </a> </button>
+          <button> <a class="navA" data-toggle="modal" data-target="#Login">Logowanie </a> </button>
       </div>
 
 
@@ -89,32 +89,34 @@ Testing
 
 
 
- 
+    <div class='wrap'>
       <div class = "flexmanag" >
-	  
+
             <div class="flex acchead">
-			
-			<img class="awatar" src="Awatar.jpg" alt="Twoje zdjęcie">
-							
-			<h2> Twój profil </h2> 
-			Tu możesz zarządzać swoimi danymi oraz ogłoszeniami.
-			</div>
-			
-			<div class="flex accpanel">
-			 
-			</div>
-			
-			<div class="flex acctable">
-			
-			</div>
-			
-			<div class="flex accfooter">
-			<h1> Testin </h1>
-			</div>          
-                 
+
+      <img class="awatar" src="awatar.jpg" alt="Twoje zdjęcie">
+
+      <h2> Twój profil </h2>
+      Tu możesz zarządzać swoimi danymi oraz ogłoszeniami.
       </div>
 
-    
+      <div class="flex accpanel">
+           <button class="buttonpanel"><a href="adds.html" target="iframe"> Ogłoszenia </a></button>
+           <button class="buttonpanel"><a href="answers.html" target="iframe"> Odpowiedzi </a></button>
+           <button class="buttonpanel"><a href="settings.html" target="iframe"> Ustawienia </a></button>
+      </div>
+
+
+        <iframe class="acctable" style="visibility:hidden;" onload="this.style.visibility = 'visible';"
+         src="settings.html" name="iframe"></iframe>
+
+      <div class="accfooter">
+        Poka 100py
+      </div>
+
+
+      </div>
+    </div>
 
  <?php
  require 'php/page_format.php';
