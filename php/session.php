@@ -4,7 +4,7 @@ require_once 'connect.php';
 if (isset($_SESSION['user'])) {
     // logged in
 } else {
-    echo "<script type='text/javascript'>alert('Please, log in first to see this page');window.location = './Register.php';</script>";
+    echo "<script type='text/javascript'>window.location = './Register.php?redirected=true';</script>";
 }
 /*
 

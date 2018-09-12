@@ -37,7 +37,7 @@ session_start();
       </div>
       <div class="btn-group flexbtngrp ">
           <a class="navA" onclick="location.href='AnnounAdd.php'"><button> Dodaj Ogłoszenie!</button></a>
-          <a class="navA" href="Account.php"><button>  Twój Profil</button></a>
+          <div id="profileButton"></div>
           <a class="navA" href="index.php"><button>  Ogłoszenia </button> </a>
           <a class="navA" data-toggle="modal" data-target="#Login" id='loginButton'><button> Logowanie </button></a>
       </div>

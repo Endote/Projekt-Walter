@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'php/session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,7 @@ session_start();
       </div>
       <div class="btn-group flexbtngrp ">
           <a class="navA" onclick="location.href='AnnounAdd.php'"><button> Dodaj Ogłoszenie!</button></a>
-          <a class="navA" href="Account.php"><button>  Twój Profil</button></a>
+          <div id="profileButton"></div>
           <a class="navA" href="index.php"><button>  Ogłoszenia </button> </a>
           <a class="navA" data-toggle="modal" data-target="#Login" id='loginButton'><button> Logowanie </button></a>
       </div>
@@ -213,7 +214,6 @@ Testing
 
     </div>
     <?php
-      require 'php/session.php';
       require 'php/connect.php';
       require 'php/page_format.php';
       if(isset($_POST['AdText']) && isset($_POST['AdTitle']) && isset($_POST['Category'])){
