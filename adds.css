@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header{
+display: flex;
+border-bottom: 2px solid gray;
+align-items: flex-start;
+}
+
+.search{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border: 1px solid black;
+}
+
+.addhead{
+
+margin: 10px;
+border-bottom: 1px solid gray;
+width: 100%;
+}
+
+.addbody {
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+margin: 10px;
+border-bottom: 1px solid gray;
+width: 100%;
+}
+
+.check {
+flex-grow: 1;
+}
+
+.date {
+flex-grow: 2;
+}
+
+.title {
+flex-grow: 5;
+}
+
+.price {
+flex-grow: 2;
+}
+
+.status {
+flex-grow: 2;
+}
+
+.addfoot{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+margin: 10px;
+width: 100%;
+}
