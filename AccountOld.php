@@ -1,6 +1,5 @@
 <?php
 session_start();
-require 'php/session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,10 +37,10 @@ require 'php/session.php';
          </a>
       </div>
       <div class="btn-group flexbtngrp ">
-          <a class="navA" href="AnnounAdd.html" ><button> Dodaj Ogłoszenie!</button></a>
-          <a class="navA" href="Account.html"><button> Twój Profil</button></a>
-          <a class="navA" href="index.html"><button> Ogłoszenia</button></a>
-          <a class="navA" data-toggle="modal" data-target="#Login" id='loginButton'><button>Logowanie</button></a>
+          <button> <a class="navA" href="AnnounAdd.html" >Dodaj Ogłoszenie!</a> </button>
+          <button> <a class="navA" href="Account.html"> Twój Profil </a> </button>
+          <button> <a class="navA" href="index.html"> Ogłoszenia </a> </button>
+          <button> <a class="navA" data-toggle="modal" data-target="#Login">Logowanie </a> </button>
       </div>
 
 
@@ -95,21 +94,21 @@ Testing
 
             <div class="flex acchead">
 
-			<img class="awatar" src="Awatar.jpg" alt="Twoje zdjęcie">
+      <img class="awatar" src="awatar.jpg" alt="Twoje zdjęcie">
 
-			<h2> Twój profil </h2>
-			Tu możesz zarządzać swoimi danymi oraz ogłoszeniami.
-			</div>
+      <h2> Twój profil </h2>
+      Tu możesz zarządzać swoimi danymi oraz ogłoszeniami.
+      </div>
 
-			<div class="flex accpanel">
-			     <a href="adds.html" target="iframe"><button class="buttonpanel"> Ogłoszenia </button></a>
-           <a href="answers.html" target="iframe"><button class="buttonpanel"> Odpowiedzi </button></a>
-           <a href="settings.php" target="iframe"><button class="buttonpanel"> Ustawienia </button></a>
-			</div>
+      <div class="flex accpanel">
+           <button class="buttonpanel"><a href="adds.html" target="iframe"> Ogłoszenia </a></button>
+           <button class="buttonpanel"><a href="answers.html" target="iframe"> Odpowiedzi </a></button>
+           <button class="buttonpanel"><a href="settings.html" target="iframe"> Ustawienia </a></button>
+      </div>
 
 
         <iframe class="acctable" style="visibility:hidden;" onload="this.style.visibility = 'visible';"
-         src="adds.html" name="iframe"></iframe>
+         src="settings.html" name="iframe"></iframe>
 
       <div class="accfooter">
         Poka 100py
@@ -119,7 +118,7 @@ Testing
       </div>
     </div>
 
-<?php
+ <?php
  require 'php/page_format.php';
 
  if(isset($_SESSION['user'])){

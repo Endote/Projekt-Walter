@@ -204,7 +204,7 @@ $checkLogin = mysqli_num_rows($result) > 0 ? 'yes' : 'no';
 $result2 = mysqli_query($link,"SELECT Email FROM login WHERE Email='$email'");
 $checkEmail = mysqli_num_rows($result2) > 0 ? 'yes' : 'no';
 while (true){
-    $verificationCode = md5(rand(0,1000));
+    $verificationCode = md5(rand(0,10000));
     $result = mysqli_query($link, "SELECT 1 FROM login WHERE ActivationCode = '$verificationCode' LIMIT 1");
     if (mysqli_num_rows($result) == 0) {
         break;
