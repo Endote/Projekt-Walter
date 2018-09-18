@@ -19,7 +19,7 @@ $passwordDB = substr($row[0], 32);
 
 if (($loginDB == 'no') || ($passwordDB !== $password))
 {
-    echo "<script type='text/javascript'>alert('Invaild login/email or password');window.location = 'index.php';</script>";
+    echo "<script type='text/javascript'>alert('Invaild login/email or password');window.location = '../Register.php?redirected=true';</script>";
 }
 
 else
@@ -28,7 +28,7 @@ else
     $row2 = mysqli_fetch_row($verification);
     if ($row2[0] == 'not verified')
     {
-        echo "<script type='text/javascript'>alert('You must activate your account first.');window.location = 'index.php';</script>";
+        echo "<script type='text/javascript'>alert('You must activate your account first.');window.location = '../Register.php?redirected=true';</script>";
     }
     
     else if (($loginDB == 'yes') && ($passwordDB == $password) && ($row2[0] == 'verified') )

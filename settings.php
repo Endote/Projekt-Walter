@@ -34,11 +34,11 @@ require 'php/session.php';
   <div class="menu">
     <form id="FormDane" action="" method="post">
     <p>Osoba Kontaktowa</p>
-    <input type="text" name="name" value="" tabindex="1"> <br><br>
+    <input type="text" name="name" id="nameInput" value="" tabindex="1"> <br><br>
     <p>Numer Telefonu</p>
-    <input type="text" name="number" value="" tabindex="2"> <br><br>
+    <input type="text" name="number" id="numberInput" value="" tabindex="2"> <br><br>
     <p>Email</p>
-    <input type="text" name="email" value="" tabindex="3"> <br><br>
+    <input type="text" name="email" id="emailInput" value="" tabindex="3"> <br><br>
 
     <input type="submit" value="Zapisz">
     </form>
@@ -84,6 +84,7 @@ require 'php/session.php';
 <?php
   require 'php/connect.php';
 
+  $session_user_id = $_SESSION['user']; 
   function random_str($length, $keyspace = '0123456789abcde')
   {
     $pieces = [];
@@ -93,14 +94,26 @@ require 'php/session.php';
     }
     return implode('', $pieces);
   }
-
+  //set current data to fields
+  $raw_login_result = mysqli_query($link, "SELECT * FROM login WHERE ID = '$session_user_id'") or die(mysqli_error($link));
+  if(mysqli_num_rows($raw_login_result) > 0)      
+  {
+    while($row = mysqli_fetch_assoc($raw_login_result))
+    {
+      $currentName = $row['Contact_Name'];
+      $currentNumber = $row['Contact_Phone_Number'];
+      $currentEmail = $row['Contact_Email'];
+      echo("<script type='text/javascript'>document.getElementById('nameInput').value = '$currentName';document.getElementById('numberInput').value = '$currentNumber';document.getElementById('emailInput').value = '$currentEmail';</script>");
+    }
+  }
 
   if(isset($_POST['oldpasswd']) && isset($_POST['newpasswd']) && isset($_POST['newpasswd2'])){
     $oldpasswd = $_POST['oldpasswd'];
     $newpasswd = $_POST['newpasswd'];
     $newpasswd2 = $_POST['newpasswd2'];   
-    $session_user_id = $_SESSION['user']; 
-    $raw_results = mysqli_query($link, "SELECT * FROM login WHERE ID = '$session_user_id'") or die(mysqli_error($link));;
+    $raw_results = mysqli_query($link, "SELECT * FROM login WHERE ID = '$session_user_id'") or die(mysqli_error($link));
+    
+
     if(mysqli_num_rows($raw_results) > 0)      
     {
       while($row = mysqli_fetch_assoc($raw_results))
@@ -115,21 +128,26 @@ require 'php/session.php';
         }
       }
     }
-    $data_changed = False;
+  }
+  $data_changed = False;
     if(isset($_POST['name'])){
       $name_to_set = $_POST['name'];
       mysqli_query($link, "UPDATE login SET Contact_Name = '$name_to_set' WHERE ID = '$session_user_id'") or die(mysqli_error($link));
       $data_changed = True;
     }
-    /*if(isset($_POST['number'])){
+    if(isset($_POST['number'])){
       $number_to_set = $_POST['number'];
       mysqli_query($link, "UPDATE login SET Contact_Phone_Number = '$number_to_set' WHERE ID = '$session_user_id'") or die(mysqli_error($link));
       $data_changed = True;
-    }*/
+    }
+    if(isset($_POST['email'])){
+      $email_to_set = $_POST['email'];
+      mysqli_query($link, "UPDATE login SET Contact_Email = '$email_to_set' WHERE ID = '$session_user_id'") or die(mysqli_error($link));
+      $data_changed = True;
+    }
     if($data_changed){
        echo("<script type='text/javascript'>alert('Dane kontaktowe zostały zaktualizowane');</script>");
     }
-  }
 
   
 ?>

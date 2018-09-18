@@ -31,16 +31,16 @@ require 'php/session.php';
   <div class = "flexnav page-header">
 
       <div class =" logo">
-        <a class="spanhelp" href="index.html" >
+        <a class="spanhelp" href="index.php" >
           <span style="color: #bc152b; ">e</span><!--
           --><span style="color: #6699cc; ">tt</span><!--
           --><span style="color: #bc152b; ">e</span>
          </a>
       </div>
       <div class="btn-group flexbtngrp ">
-          <a class="navA" href="AnnounAdd.html" ><button> Dodaj Ogłoszenie!</button></a>
-          <a class="navA" href="Account.html"><button> Twój Profil</button></a>
-          <a class="navA" href="index.html"><button> Ogłoszenia</button></a>
+          <a class="navA" href="AnnounAdd.php" ><button> Dodaj Ogłoszenie!</button></a>
+          <a class="navA" href="Account.php"><button> Twój Profil</button></a>
+          <a class="navA" href="index.php"><button> Ogłoszenia</button></a>
           <a class="navA" data-toggle="modal" data-target="#Login" id='loginButton'><button>Logowanie</button></a>
       </div>
 
@@ -59,7 +59,7 @@ require 'php/session.php';
 <h4 class="modal-title">
   <div class =" logo-login">
     Logowanie w
-    <a class="spanhelp" href="index.html" >
+    <a class="spanhelp" href="index.php" >
       <span style="color: #bc152b; ">e</span><!--
       --><span style="color: #6699cc; ">tt</span><!--
       --><span style="color: #bc152b; ">e</span>

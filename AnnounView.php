@@ -149,6 +149,10 @@ if(isset($_GET['id'])){
   {
     while($row = mysqli_fetch_assoc($raw_results))
     {
+      //increase views
+      $newViews = $row['views'] + 1;
+      mysqli_query($link, "UPDATE adverts SET views = '$newViews' WHERE id = '$ad_id'");
+
       $title_of_ad = $row['title'];
       $text_of_ad = $row['text'];
       $poster_id = $row['poster_id'];
