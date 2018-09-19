@@ -102,14 +102,14 @@ Testing
 			</div>
 
 			<div class="flex accpanel">
-			     <a href="adds.html" target="iframe"><button class="buttonpanel"> Ogłoszenia </button></a>
+			     <a href="adds.php" target="iframe"><button class="buttonpanel"> Ogłoszenia </button></a>
            <a href="answers.html" target="iframe"><button class="buttonpanel"> Odpowiedzi </button></a>
            <a href="settings.php" target="iframe"><button class="buttonpanel"> Ustawienia </button></a>
 			</div>
 
 
         <iframe class="acctable" style="visibility:hidden;" onload="this.style.visibility = 'visible';"
-         src="adds.html" name="iframe"></iframe>
+         src="adds.php" name="iframe"></iframe>
 
       <div class="accfooter">
         Poka 100py
