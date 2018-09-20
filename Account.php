@@ -23,7 +23,7 @@ require 'php/session.php';
 
 
 
-  <a href="Register.html" class="btn btn-info btnhead register"  role="button">
+  <a href="Register.php" class="btn btn-info btnhead register"  role="button">
     Zarejestruj się! </a>
 
 
@@ -39,7 +39,7 @@ require 'php/session.php';
       </div>
       <div class="btn-group flexbtngrp ">
           <a class="navA" href="AnnounAdd.php" ><button> Dodaj Ogłoszenie!</button></a>
-          <a class="navA" href="Account.php"><button> Twój Profil</button></a>
+          <a class="navA" href="Account.php" id="profileButton"><button> Twój profil</button></a>
           <a class="navA" href="index.php"><button> Ogłoszenia</button></a>
           <a class="navA" data-toggle="modal" data-target="#Login" id='loginButton'><button>Logowanie</button></a>
       </div>

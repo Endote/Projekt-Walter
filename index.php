@@ -21,7 +21,7 @@ session_start();
 
 
 
-  <a href="Register.php" class="btn btn-info btnhead register"  role="button">
+  <a href="Register.php" class="btn btn-info btnhead register" role="button">
     Zarejestruj się! </a>
 
 
@@ -57,7 +57,7 @@ session_start();
 <h4 class="modal-title">
   <div class =" logo-login">
     Logowanie w
-    <a class="spanhelp" href="index.html" >
+    <a class="spanhelp" href="index.php" >
       <span style="color: #bc152b; ">e</span><!--
       --><span style="color: #6699cc; ">tt</span><!--
       --><span style="color: #bc152b; ">e</span>
