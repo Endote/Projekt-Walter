@@ -154,7 +154,7 @@ Testing
     Numer telefonu
     </div>
   <div class="col-xs-4">
-    <input type="password" name="RegPhone">
+    <input type="text" name="RegPhone">
   </div>
 
   <div class="col-xs-4"></div>

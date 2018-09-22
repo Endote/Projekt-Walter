@@ -24,6 +24,14 @@ require 'php/session.php';
     $( "#accordion" ).accordion();
   } );
   </script>
+  <script type='text/javascript'>
+function Confirm(){
+	var r=prompt('Czy jestes pewnien ze chcesz usunac konto?'); 
+	if (r==true){
+		alert('ok!')
+	}
+}
+</script>
 </head>
 
 <body>
@@ -61,8 +69,16 @@ require 'php/session.php';
 
   </div>
   <h3>Zarządzanie Kontem</h3>
+  
+
+ 
   <div class="menu">
-    <p>
+  <form id="sett" method="post" action="">
+  <input type="submit" id="delete" value="Usuń konto" onClick="javascript:Confirm()">
+  </form>
+  
+
+   <!--   <p>
     Cras dictum. Pellentesque habitant morbi tristique senectus et netus
     et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
     faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
@@ -72,7 +88,7 @@ require 'php/session.php';
     Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
     inceptos himenaeos.
-    </p>
+    </p> -->
   </div>
 </div>
 
@@ -123,12 +139,9 @@ require 'php/session.php';
           mysqli_query($link, "UPDATE login SET password = '$newpasswd_updated' WHERE ID = '$session_user_id'");
           echo("<script type='text/javascript'>alert('Hasło zostało zaktualizowane');</script>");
         }
-        else{
-          echo("<script type='text/javascript'>alert('Jedno z haseł jest nieprawidłowe');</script>");
         }
       }
     }
-  }
   $data_changed = False;
     if(isset($_POST['name'])){
       $name_to_set = $_POST['name'];
@@ -148,10 +161,8 @@ require 'php/session.php';
     if($data_changed){
        echo("<script type='text/javascript'>alert('Dane kontaktowe zostały zaktualizowane');</script>");
     }
-
   
 ?>
-
 </body>
 
 </html>
