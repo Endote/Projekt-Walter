@@ -28,6 +28,7 @@ a span {
   font-weight: bold;
   font-style: italic;
   max-height: 50px;
+  flex-shrink: 0;
 }
 
 .logo-login {
@@ -68,7 +69,7 @@ align-self: center;
 
 
 
-.btn-group button {
+.flexbtngrp button {
     background-color: #b44136; /* Green background */
     border: 3px solid #002e63; /* Green border */
     color: white; /* White text */
@@ -79,19 +80,19 @@ align-self: center;
     max-height: 50px;
 }
 
-.btn-group button:not(:last-child) {
+.flexbtngrp button:not(:last-child) {
     border-right: none; /* Prevent double borders */
 }
 
 /* Clear floats (clearfix hack) */
-.btn-group:after {
+.flexbtngrp:after {
     content: "";
     clear: both;
     display: table;
 }
 
 /* Add a background color on hover */
-.btn-group button:hover {
+.flexbtngrp button:hover {
   transition: all 0.6s ease;
     background-color: #9cbadd;
 }
