@@ -95,21 +95,21 @@ Testing
 
             <div class="flex acchead">
 
-			<img class="awatar" src="Awatar.jpg" alt="Twoje zdjęcie">
+			<img class="awatar" src="AccountIframe/Awatar.jpg" alt="Twoje zdjęcie">
 
 			<h2> Twój profil </h2>
 			Tu możesz zarządzać swoimi danymi oraz ogłoszeniami.
 			</div>
 
 			<div class="flex accpanel">
-			     <a href="adds.php" target="iframe"><button class="buttonpanel"> Ogłoszenia </button></a>
-           <a href="answers.html" target="iframe"><button class="buttonpanel"> Odpowiedzi </button></a>
-           <a href="settings.php" target="iframe"><button class="buttonpanel"> Ustawienia </button></a>
+			     <a href="AccountIframe/adds.php" target="iframe"><button class="buttonpanel"> Ogłoszenia </button></a>
+           <a href="AccountIframe/answers.html" target="iframe"><button class="buttonpanel"> Odpowiedzi </button></a>
+           <a href="AccountIframe/settings.php" target="iframe"><button class="buttonpanel"> Ustawienia </button></a>
 			</div>
 
 
         <iframe class="acctable" style="visibility:hidden;" onload="this.style.visibility = 'visible';"
-         src="adds.php" name="iframe"></iframe>
+         src="AccountIframe/adds.php" name="iframe"></iframe>
 
       <div class="accfooter">
         Poka 100py

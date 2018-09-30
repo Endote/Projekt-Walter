@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'php/session.php';
+require '../php/session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,9 +26,10 @@ require 'php/session.php';
   </script>
   <script type='text/javascript'>
 function Confirm(){
-	var r=prompt('Czy jestes pewnien ze chcesz usunac konto?'); 
+	var r=confirm('Czy jestes pewnien ze chcesz usunac konto?'); 
 	if (r==true){
-		alert('ok!')
+		alert('Twoje konto zostanie usunięte za 30 dni, masz do tego momentu czas na reatywację');
+    window.parent.location = "../php/account_deletion.php"
 	}
 }
 </script>
@@ -98,7 +99,7 @@ function Confirm(){
   </div>
 
 <?php
-  require 'php/connect.php';
+  require '../php/connect.php';
 
   $session_user_id = $_SESSION['user']; 
   function random_str($length, $keyspace = '0123456789abcde')
