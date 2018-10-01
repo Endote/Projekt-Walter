@@ -140,15 +140,15 @@ function DisplayResults($connectionLink, $query){
 }
 if($category != null && $search != null)
 {
-    DisplayResults($link, "SELECT * FROM adverts WHERE (((LOWER(title) LIKE LOWER('%".$search."%')) OR (LOWER(text) LIKE LOWER('%".$search."%'))) AND (LOWER(category) = LOWER('".$category."')))");
+    DisplayResults($link, "SELECT * FROM adverts WHERE (((LOWER(title) LIKE LOWER('%".$search."%')) OR (LOWER(text) LIKE LOWER('%".$search."%'))) AND (LOWER(category) = LOWER('".$category."')) AND status='approved')");
 }
 else if ($search != null)
 {
-    DisplayResults($link, "SELECT * FROM adverts WHERE (LOWER(title) LIKE LOWER('%".$search."%')) OR (LOWER(text) LIKE LOWER('%".$search."%'))");
+    DisplayResults($link, "SELECT * FROM adverts WHERE (LOWER(title) LIKE LOWER('%".$search."%')) OR (LOWER(text) LIKE LOWER('%".$search."%') AND status='approved')");
     
 }
 else if($category != null){
-    DisplayResults($link, "SELECT * FROM adverts WHERE (LOWER(category) = LOWER('".$category."'))");
+    DisplayResults($link, "SELECT * FROM adverts WHERE (LOWER(category) = LOWER('".$category."') AND status='approved')");
 }
 else 
 {

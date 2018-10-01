@@ -144,7 +144,7 @@ mysqli_set_charset($link,"utf8");
 
 if(isset($_GET['id'])){
   $ad_id = $_GET['id'];
-  $raw_results = mysqli_query($link,"SELECT * FROM adverts WHERE id = '$ad_id'") or die(mysqli_error($link));
+  $raw_results = mysqli_query($link,"SELECT * FROM adverts WHERE id = '$ad_id' AND status='approved'") or die(mysqli_error($link));
   if(mysqli_num_rows($raw_results) > 0)      
   {
     while($row = mysqli_fetch_assoc($raw_results))
