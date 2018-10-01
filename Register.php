@@ -291,14 +291,13 @@ else
     $headers = "From:".$from;
     mail($to,$subject,$body,$headers);
     //echo "You are registered! :) <br />";
-    echo "Verification code has been sent into your mail account. <br />";
+    echo "<script type='text/javascript'>alert('Kod weryfikujący został wysłany na twoje konto');window.location = './index.php';</script>";
     //mail($email, "Registration confirmation", "to be added");
     mysqli_close($link);
 }
 
 else
-    echo "Something went wrong :(";
-    echo "<br /><br /> <a href='../index.html'>Back</a>";
+    echo "<script type='text/javascript'>alert('Ups! Coś poszło nie tak :(');window.location = './Register.php';</script>";
 }
 ?>
 

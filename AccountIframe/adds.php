@@ -37,8 +37,11 @@ require '../php/session.php';
       </div>
 
       <div class="col-sm-6 search">
+        <form method="get" action="">
           <input type="text" class="search"
-          placeholder="Tytuł Ogłoszenia?" name="search">
+          placeholder="Tytuł Ogłoszenia?" name="search_query">
+          <input type="submit" style="background: transparent; border: none !important;font-size:0; visibility: hidden; float: right;">
+        </form>
       </div>
     </div>
 
@@ -111,7 +114,13 @@ function DisplayResults($connectionLink, $query){
         echo("<script type='text/javascript'>document.getElementById('search-container').innerHTML += 'Brak wyników wyszukiwania'</script>");
     }
 }
-DisplayResults($link, "SELECT * FROM adverts WHERE poster_id = '$session_user_id'");
+if(!isset($_GET['search_query'])){
+  DisplayResults($link, "SELECT * FROM adverts WHERE poster_id = '$session_user_id'");
+}
+else{
+  $query = $_GET['search_query'];
+  DisplayResults($link, "SELECT * FROM adverts WHERE (LOWER(title) LIKE LOWER('%".$query."%')) AND poster_id = '$session_user_id'");
+}
 ?>
 
 </body>
