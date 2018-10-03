@@ -217,7 +217,24 @@ Testing
       require 'php/connect.php';
       require 'php/page_format.php';
       if(isset($_GET['id'])){
-
+        $link->set_charset("utf8");
+        $ad_id = $_GET['id'];
+        $raw_results = mysqli_query($link,"SELECT * FROM adverts WHERE id = '$ad_id'") or die(mysqli_error($link));
+        if(mysqli_num_rows($raw_results) > 0)      
+        {
+          while($row = mysqli_fetch_assoc($raw_results))
+          {
+            if($_SESSION['user'] != $row['poster_id']){
+              die();
+            }
+            $ad_text = str_ireplace("</br>", "\\r\\n", $row['text']);
+            $ad_title = $row['title'];
+            $ad_image1 = @addslashes(base64_encode($row['image1']));
+            $ad_category = $row['category'];
+            $post_date = $row['posting_date'];
+            echo("<script>document.getElementsByName('AdTitle')[0].value='".$ad_title."';document.getElementsByName('Category')[0].value = '".$ad_category."';document.getElementsByName('AdText')[0].innerHTML = '".$ad_text."';</script>");
+          }
+        }
       }
 
       /*if(isset($_POST['AdText']) && isset($_POST['AdTitle']) && isset($_POST['Category'])){
@@ -242,7 +259,7 @@ Testing
         $result = mysqli_query($link, "INSERT INTO adverts (title,text,image1,image2,image3,image4,image5,category,poster_id,posting_date,views,status) VALUES ('$ad_title','$ad_text','$ad_image1', '$ad_image2', '$ad_image3', '$ad_image4', '$ad_image5', '$ad_category', '$user_session_id', '$current_date', 0, 'pending')") or die(mysqli_error($link));
         $message = "Post został opublikowany!";
         echo "<script type='text/javascript'>alert('$message');window.location.href = 'index.php';</script>";*/
-      }
+      //}
     ?>
 
 </body>
