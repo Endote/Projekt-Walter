@@ -19,6 +19,8 @@ require '../php/session.php';
   }
 }
   </script>
+  <style>
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Back to normie bs -->
   <link rel="stylesheet" href="adds.css">
@@ -76,6 +78,7 @@ function DisplayResults($connectionLink, $query){
     {
         while($row = mysqli_fetch_assoc($raw_results))
         {
+          $id_of_ad = $row['id'];
           $title_of_ad = $row['title'];
           $text_of_ad = $row['text'];
           $image_of_ad = $row['image1'];
@@ -97,7 +100,7 @@ function DisplayResults($connectionLink, $query){
           <div class=price>".$date_of_ad."</div>\
           <div class=status>\
             <button> Aktywuj </button>\
-            <button> Edytuj </button>\
+            <a href=\"../AnnounEdit.php?id=".$id_of_ad."\" target=\"_parent\"><button> Edytuj </button></a>\
           </div>\
         </div>\
         <div class=addfoot>\

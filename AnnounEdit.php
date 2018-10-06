@@ -208,7 +208,7 @@ Testing
 	</div>
 	                                    <hr class="HRanon">
 
-  <input type="submit" value="Dodaj Ogłoszenie">
+  <input type="submit" value="Zaktualizuj Ogłoszenie">
         </form>
 
 
@@ -227,39 +227,38 @@ Testing
             if($_SESSION['user'] != $row['poster_id']){
               die();
             }
+            if(isset($_POST['AdText']) && isset($_POST['AdTitle']) && isset($_POST['Category'])){
+            $ad_text = preg_replace( "/\r\n/", "</br>", $_POST['AdText']);
+            $ad_title = $_POST['AdTitle'];
+            $ad_image1 = @addslashes(file_get_contents($_FILES['image1']['tmp_name']));
+            $ad_image2 = @addslashes(file_get_contents($_FILES['image2']['tmp_name']));
+            $ad_image3 = @addslashes(file_get_contents($_FILES['image3']['tmp_name']));
+            $ad_image4 = @addslashes(file_get_contents($_FILES['image4']['tmp_name']));
+            $ad_image5 = @addslashes(file_get_contents($_FILES['image5']['tmp_name']));
+            $ad_category = $_POST['Category'];
+            $user_session_id = $_SESSION['user'];
+
+            date_default_timezone_set('Europe/Berlin'); // CDT
+            $current_date = date('Y-m-d');
+
+            $link->set_charset("utf8");
+
+            $result = mysqli_query($link, "UPDATE adverts SET title='$ad_title', text='$ad_text', category='$ad_category' WHERE id='$ad_id'") or die(mysqli_error($link));
+            $message = "Post został zaktualizowany!";
+            echo "<script type='text/javascript'>alert('$message');window.location.href = 'index.php';</script>";
+            }
+            else{
             $ad_text = str_ireplace("</br>", "\\r\\n", $row['text']);
             $ad_title = $row['title'];
             $ad_image1 = @addslashes(base64_encode($row['image1']));
             $ad_category = $row['category'];
             $post_date = $row['posting_date'];
             echo("<script>document.getElementsByName('AdTitle')[0].value='".$ad_title."';document.getElementsByName('Category')[0].value = '".$ad_category."';document.getElementsByName('AdText')[0].innerHTML = '".$ad_text."';</script>");
+           }
           }
         }
       }
 
-      /*if(isset($_POST['AdText']) && isset($_POST['AdTitle']) && isset($_POST['Category'])){
-
-        $ad_text = preg_replace( "/\r\n/", "</br>", $_POST['AdText']);
-        $ad_title = $_POST['AdTitle'];
-        $ad_image1 = @addslashes(file_get_contents($_FILES['image1']['tmp_name']));
-        $ad_image2 = @addslashes(file_get_contents($_FILES['image2']['tmp_name']));
-        $ad_image3 = @addslashes(file_get_contents($_FILES['image3']['tmp_name']));
-        $ad_image4 = @addslashes(file_get_contents($_FILES['image4']['tmp_name']));
-        $ad_image5 = @addslashes(file_get_contents($_FILES['image5']['tmp_name']));
-        $ad_category = $_POST['Category'];
-        $user_session_id = $_SESSION['user'];
-        //$current_user_id = $_SESSION['user_id'];
-        date_default_timezone_set('Europe/Berlin'); // CDT
-        $current_date = date('Y-m-d');
-
-        // Create connection
-        $link->set_charset("utf8");
-
-        //Insert our ad into the database
-        $result = mysqli_query($link, "INSERT INTO adverts (title,text,image1,image2,image3,image4,image5,category,poster_id,posting_date,views,status) VALUES ('$ad_title','$ad_text','$ad_image1', '$ad_image2', '$ad_image3', '$ad_image4', '$ad_image5', '$ad_category', '$user_session_id', '$current_date', 0, 'pending')") or die(mysqli_error($link));
-        $message = "Post został opublikowany!";
-        echo "<script type='text/javascript'>alert('$message');window.location.href = 'index.php';</script>";*/
-      //}
     ?>
 
 </body>
