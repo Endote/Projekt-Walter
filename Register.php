@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -171,8 +175,8 @@ if(isset($_GET['redirected'])){
 ?>
 
 <?php
-  require_once 'php/connect.php';
   require 'php/page_format.php';
+  require 'php/connect.php';
 
 if(!isset($_POST['RegLogin']) || !isset($_POST['RegPasswd']) || !isset($_POST['RegPasswd2']) || !isset($_POST['RegMail']) || !isset($_POST['RegPhone'])){
   die();
@@ -190,14 +194,13 @@ $phone = $_POST['RegPhone'];
 
 function random_str($length, $keyspace = '0123456789abcde')
 {
-    $pieces = [];
+    $pieces = array();
     $max = mb_strlen($keyspace, '8bit') - 1;
     for ($i = 0; $i < $length; ++$i) {
-        $pieces []= $keyspace[random_int(0, $max)];
+        $pieces []= $keyspace[rand(0, $max)];
     }
     return implode('', $pieces);
 }
-
 $encrypt = random_str(32); 
 $result = mysqli_query($link,"SELECT Login FROM login WHERE Login='$login'");
 $checkLogin = mysqli_num_rows($result) > 0 ? 'yes' : 'no';
@@ -285,9 +288,9 @@ else
     if(mysqli_query($link, $sql))
     {
     $to=$email;
-    $subject="Activation Code For Test.pl";
-    $from = 'n.weronika@op.pl';
-    $body='Thanks for singing up, '.$login.'!< /br>Your Activation Code is '.$verificationCode.' Please Click On This link <a href="verify.php?id=$login">Verify.php?code='.$verificationCode.'</a>to activate your account.';
+    $subject="Activation Code For i-ette.de";
+    $from = 'noreply@i-ette.de';
+    $body="Thanks for singing up, ".$login."! Your Activation Code is ".$verificationCode.", <a href='i-ette.de/page/php/verify.php?code=".$verificationCode."'>Please Click On This link to activate your account.</a>";
     $headers = "From:".$from;
     mail($to,$subject,$body,$headers);
     //echo "You are registered! :) <br />";
