@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -93,7 +93,7 @@ Testing
 
 
         <div class = "panel panel-search row">
-            <form>
+            <form action="search.php" method="GET">
                 <div class="col-sm-5">
                   <input type="text" placeholder="Czego szukasz?" name="search"> </div>
                 <div class="col-sm-5">
