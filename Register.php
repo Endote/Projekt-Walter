@@ -170,7 +170,7 @@ Testing
 
 <?php
 if(isset($_GET['redirected'])){
-	echo('<script>$(function() {$("#Login").modal();});</script>');
+  echo('<script>$(function() {$("#Login").modal();});</script>');
 }
 ?>
 
@@ -282,7 +282,7 @@ else
         die("ERROR: Could not connect. ".mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO login (Login, Password, Email, Phone, ActivationCode, EmailStatus) VALUES ('$login', '$password', '$email', '$phone', '$verificationCode', 'not verified')";
+    $sql = "INSERT INTO login (Login, Password, Email, Contact_Phone_Number, Contact_Email, Phone, ActivationCode, EmailStatus) VALUES ('$login', '$password', '$email', '$phone', '$email', '$phone', '$verificationCode', 'not verified')";
 
 
     if(mysqli_query($link, $sql))
@@ -290,8 +290,10 @@ else
     $to=$email;
     $subject="Activation Code For i-ette.de";
     $from = 'noreply@i-ette.de';
-    $body="Thanks for singing up, ".$login."! Your Activation Code is ".$verificationCode.", <a href='i-ette.de/page/php/verify.php?code=".$verificationCode."'>Please Click On This link to activate your account.</a>";
+    $body="Thanks for singing up, ".$login."!<br/> Your Activation Code is ".$verificationCode."<br/> <a target='_blank' href='http://i-ette.de/page/php/verify.php?code=".$verificationCode."'>Please Click On This link to activate your account</a>";
     $headers = "From:".$from;
+  $headers .= "MIME-Version: 1.0\r\n";
+  $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     mail($to,$subject,$body,$headers);
     //echo "You are registered! :) <br />";
     echo "<script type='text/javascript'>alert('Kod weryfikujący został wysłany na twoje konto');window.location = './index.php';</script>";
