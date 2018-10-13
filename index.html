@@ -12,12 +12,10 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="index.css">
   <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Dropdown Script -->
-  <script src="js/index.js"></script>
-  <script src="js/jquery-2.1.1.js"></script>
-  <script src="js/jquery.menu-aim.js"></script> <!-- menu aim -->
-  <script src="js/main.js"></script> <!-- Resource jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -39,10 +37,10 @@
          </a>
       </div>
       <div class="flexbtngrp ">
-          <button> <a class="navA" href="AnnounAdd.html" >Dodaj Ogłoszenie!</a> </button>
-          <button> <a class="navA" href="Account.html"> Twój Profil </a> </button>
-          <button> <a class="navA" href="index.html"> Ogłoszenia </a> </button>
-          <button> <a class="navA" data-toggle="modal" data-target="#Login">Logowanie </a> </button>
+          <button> <a class="navA" href="AnnounAdd.html">Dodaj Ogłoszenie!</a> </button>
+          <button> <a class="navA" href="Account.html">Twój Profil</a> </button>
+          <button> <a class="navA" href="index.html">Ogłoszenia </a> </button>
+          <button> <a class="navA" data-toggle="modal" data-target="#Login">Logowanie</a> </button>
       </div>
 
 
@@ -88,6 +86,20 @@ Testing
 
 <!-- Modal END-->
 
+<script>
+function toggle_div_visibility(id)	{
+
+	var divele = document.getElementById(id);
+
+	if(divele.style.display == 'none')
+			divele.style.display = 'flex';
+
+	else
+		divele.style.display = 'none';
+
+}
+</script>
+
 
 
 
@@ -108,7 +120,7 @@ Testing
           <!-- Pierwszy Rząd -->
             <div class="box">
               <div class="categorybox">
-                  <a class="categoryA" href="php/search.php?kat=praca">Praca </a>
+                  <a onclick="toggle_div_visibility('praca');" class="categoryA" href="#">Praca </a>
               </div>
               <div class="categorybox">
                 <a class="categoryA" href="php/search.php?kat=nieruchomości">Nieruchomości </a>
@@ -118,6 +130,14 @@ Testing
               </div>
               <div class="categorybox">
                   <a class="categoryA" href="php/search.php?kat=elektronika"> Elektronika </a>
+              </div>
+            </div>
+            <div class="hiddenbox" id="praca">
+              <div class="pracabox">
+                <a href="#"> Szukasz pracy? </a>
+              </div>
+              <div class="pracabox">
+                <a href="#"> Chcesz znaleźć pracownika? </a>
               </div>
             </div>
             <!-- Drugi Rząd -->

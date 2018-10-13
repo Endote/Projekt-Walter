@@ -39,5 +39,28 @@ input[type=submit] {
   justify-content: space-evenly;
 }
 
+.hiddenbox{
+  border: 1px solid black;
+}
+
+#praca{
+  display: flex;
+  height: 50px;
+}
+
+.pracabox {
+  margin: 15px;
+  width: 50%;
+  flex-grow: 1;
+  text-align: center;
+}
+
+footer{
+  height: 15%;
+  background-color: white;
+  position: absolute;
+  bottom: auto;
+}
+
 
 /* Dropdown */
